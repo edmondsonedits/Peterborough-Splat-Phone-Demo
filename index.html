@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#111713">
+  <title>Peterborough · Phone demo</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./loop.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/three/addons/"}}</script>
+</head>
+<body>
+  <main id="viewport" aria-label="Four-street Gaussian-splat loop viewer"></main>
+  <header class="topbar"><div class="brand"><span class="brand-mark">P</span><div><p class="eyebrow">PETERBOROUGH · CLOSED LOOP</p><h1 id="title">Four-street drive</h1></div></div><span class="local-badge">PHONE DEMO</span></header>
+  <section class="controls" aria-label="Loop controls">
+    <div class="path-row"><button id="forwardView" class="preset active" aria-pressed="true">Forward</button><button id="leftView" class="preset" aria-pressed="false">Left frontage</button><button id="rightView" class="preset" aria-pressed="false">Right frontage</button></div>
+    <label class="frame-field"><span>PATH POSITION <b id="frameReadout">0</b></span><input id="frameRange" type="range" min="0" max="1" step="1" value="0" aria-label="Path position"></label>
+  </section>
+  <aside id="loading" role="status"><span class="spinner"></span><b id="loadTitle">Preparing local loop</b><span id="loadDetail">Opening the supplied loop manifest…</span></aside>
+  <section class="bottom-panel" aria-label="Driving and capture controls">
+    <p id="notice" class="notice">Local review scene. Scale is unverified; no distance or speed measurements are shown.</p>
+    <div class="actions"><button id="play" class="primary" disabled>▶ Auto-drive loop</button><button id="reset" class="quiet" disabled>↺ Reset</button><button id="heightLock" class="lock" aria-pressed="true" disabled>Source height locked <b>ON</b></button><button id="screenshot" class="quiet" disabled>▧ Save snapshot</button></div>
+    <div class="drive-foot"><span id="status"><i class="status-dot"></i> Preparing local loop</span><span id="currentChunk" class="chunk-label"></span><span class="hint">WASD / arrows move · drag to look · Shift moves faster</span></div>
+  </section>
+  <div class="touch-controls" aria-label="Touch movement"><button data-move="forward" aria-label="Move forward">↑</button><div><button data-move="left" aria-label="Move left">←</button><button data-move="back" aria-label="Move back">↓</button><button data-move="right" aria-label="Move right">→</button></div></div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="./loop.js"></script>
+</body>
+</html>
+
